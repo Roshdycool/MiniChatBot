@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLTK Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-header-title">
+                <i class="fas fa-robot"></i>
+                <h1>NLTK Chatbot</h1>
+            </div>
+            <p>Ask me anything!</p>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Hello! I'm a simple chatbot. How can I help you today?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type your message..." autofocus>
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="suggestions">
+        <p>Try asking:</p>
+        <div class="suggestion-chips">
+            <button class="suggestion-chip" onclick="sendSuggestion('Hello')">Hello</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('What is your name?')">What is your name?</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('How are you?')">How are you?</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Help')">Help</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
